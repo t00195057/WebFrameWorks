@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ReservationsSchemaSchema = new mongoose.Schema({
+const gameSchema = new mongoose.Schema({
     gamename: {
         type: String,
         required: true,

@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
 
-/* GET homepage page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+const mongoose = require('mongoose');
+
+const profileSchema = new mongoose.Schema({
+    username: {
+        type: String,
+    },
+    password: {
+        type: String,
+    },
+    email: {
+        type: String,
+    },
+
+
 });
 
-module.exports = router;
+mongoose.model('profile', profileSchema);

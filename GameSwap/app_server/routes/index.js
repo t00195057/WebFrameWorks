@@ -8,13 +8,13 @@ const ctrlRegister = require('../controllers/register');
 
 
 
-router.get('/', ctrlHomePage.homepage);
-module.exports = router;
+router.get('/', ctrlHomePage.game);
+//module.exports = router;
 
 router.get('/Login', ctrlLogin.login);
 
 router.get('/Register',ctrlRegister.register);
 
-router.get('/Profile', ctrlProfile.profile);
+router.get('/Profile', ctrlProfile.about);
 
 module.exports = router;

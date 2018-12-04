@@ -1,21 +1,9 @@
 const mongoose = require('mongoose');
 
-
-
-
-const profileSchema = new mongoose.Schema({
-
-    username: {
-        type: String,
-
-    },
-
-    password: {
-        type: String,
-    },
-    email: {
+const HomePageSchema = new mongoose.Schema({
+    description: {
         type: String,
     },
 });
 
-mongoose.model('profile', profileSchema);
+mongoose.model('homepage', HomePageSchema);
