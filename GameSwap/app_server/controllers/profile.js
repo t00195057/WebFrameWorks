@@ -4,11 +4,8 @@ const request = require('request');
 const apiOptions = {
     server: 'http://localhost:3000'
 };
-// if (process.env.NODE_ENV === 'production') {
-//     apiOptions.server = "http://localhost:3000";
-// }
 
-const renderGame = function(req, res, responseBody){
+const _renderGame = function(req, res, responseBody){
     let message = null;
     if (!(responseBody)) {
         message = "API lookup error";
@@ -18,17 +15,18 @@ const renderGame = function(req, res, responseBody){
     res.render('index', {
         title: 'GameSwap',
 
-        abouts: responseBody,
+        games: responseBody,
         message: message,
     });
 };
 
-/* GET about page */
 
-const about = function(req, res,body){
-    const path = `/api/games/5c06db3bc36c945c0cebc143` ;
+
+
+const game = function(req, res,body){
+    const path = `/api/games/5c07c2e6929d291f5f3247dc` ;
     const postData = {
-        paragraph: body.paragraph
+        gamename: body.gamename
     };
     const requestOptions = {
         url : apiOptions.server + path,
@@ -39,7 +37,7 @@ const about = function(req, res,body){
     request(requestOptions, (err, response, body) => {
 
             _renderGame(req, res, body);
-            console.log(body.paragraph);
+            console.log(body.gamename);
 
         }
 
@@ -48,6 +46,6 @@ const about = function(req, res,body){
 
 
 module.exports = {
-    about
+    game
 
 };

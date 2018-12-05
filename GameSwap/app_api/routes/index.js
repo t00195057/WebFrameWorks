@@ -23,8 +23,8 @@ router
     .route('/profile/:profileid')
     .get(ctrlProfile.readprofile);
 
-//reservation routers
-router
+//Game routers
+
 router
     .route('/games')
     .get(ctrlGame.addgame)
