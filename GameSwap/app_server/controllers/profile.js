@@ -24,7 +24,7 @@ const _renderGame = function(req, res, responseBody){
 
 
 const game = function(req, res,body){
-    const path = `/api/games/5c07c2e6929d291f5f3247dc` ;
+    const path = `/api/games/5c081d33eefcb6b682cdbfb6` ;
     const postData = {
         gamename: body.gamename
     };
